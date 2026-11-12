@@ -1,0 +1,695 @@
+/* Style sheet for சுக்ர பீட முத்திரை Page Component */
+
+:root {
+  --sp-primary: #9A3B34;
+  --sp-bg-color: #FFFDF8;
+  --sp-card-bg: #FFFFFF;
+  --sp-text-color: #333333;
+  --sp-border-color: #E8D3B5;
+  --sp-accent-color: #802c25;
+  --sp-muted-color: #666666;
+  
+  --sp-font-primary: "Plus Jakarta Sans", "Segoe UI", Tahoma, sans-serif;
+  --sp-font-tamil: "Anek Tamil", "Nirmala UI", "Latha", sans-serif;
+  --sp-font-serif: "Cormorant Garamond", Georgia, serif;
+}
+
+/* Base Styles */
+.sp-page-container {
+  background-color: var(--sp-bg-color);
+  color: var(--sp-text-color);
+  font-family: var(--sp-font-tamil);
+  font-size: 18px;
+  line-height: 1.9;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sp-page-container * {
+  box-sizing: border-box;
+}
+
+/* Breadcrumb */
+.sp-breadcrumb-container {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  padding: 0 24px;
+}
+
+.sp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--sp-muted-color);
+  font-family: var(--sp-font-primary);
+}
+
+.sp-breadcrumb a {
+  color: var(--sp-muted-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sp-breadcrumb a:hover {
+  color: var(--sp-primary);
+}
+
+.sp-breadcrumb-separator {
+  color: var(--sp-border-color);
+}
+
+.sp-breadcrumb-current {
+  color: var(--sp-primary);
+  font-weight: 500;
+  font-family: var(--sp-font-tamil);
+}
+
+/* Sections Configuration */
+.sp-section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sp-section-narrow {
+  max-width: 800px;
+}
+
+/* Animations */
+.sp-fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: spFadeIn 0.8s ease forwards;
+}
+
+@keyframes spFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Devotional Hero Section */
+.sp-hero-section {
+  position: relative;
+  height: 58vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.sp-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(60, 15, 12, 0.55), rgba(154, 59, 52, 0.5));
+  z-index: 1;
+}
+
+.sp-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #FFFFFF;
+}
+
+.sp-title {
+  font-size: 42px;
+  color: #FFFFFF;
+  margin: 0 0 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sp-subtitle {
+  font-size: 19px;
+  color: #F1E2CD;
+  max-width: 600px;
+  margin: 0 auto 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.sp-ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px auto 0;
+}
+
+.sp-ornament-line {
+  height: 1px;
+  width: 80px;
+  background: #F1E2CD;
+  opacity: 0.6;
+}
+
+.sp-hero-divider .sp-ornament-line {
+  background: #F1E2CD;
+}
+
+.sp-hero-divider .sp-ornament-symbol {
+  color: #F1E2CD;
+}
+
+.sp-ornament-symbol {
+  color: var(--sp-primary);
+  font-size: 16px;
+}
+
+/* Scroll Indicator */
+.sp-scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: #F1E2CD;
+  font-size: 24px;
+  animation: spBounce 2s infinite;
+  opacity: 0.8;
+}
+
+@keyframes spBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -8px);
+  }
+  60% {
+    transform: translate(-50%, -4px);
+  }
+}
+
+/* Devotional Immersive Scrolling Section */
+.sp-scrolling-section {
+  position: relative;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 40px 0;
+  border-top: 1px solid var(--sp-border-color);
+  border-bottom: 1px solid var(--sp-border-color);
+}
+
+.sp-scrolling-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(27, 18, 18, 0.65);
+  z-index: 1;
+}
+
+.sp-scrolling-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  padding: 40px;
+  color: #FFFFFF;
+}
+
+.sp-scrolling-quote {
+  font-size: 24px;
+  line-height: 1.8;
+  margin: 0 0 20px;
+  font-family: var(--sp-font-tamil);
+  font-weight: 500;
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sp-scrolling-divider {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.sp-scrolling-line {
+  height: 1px;
+  width: 60px;
+  background: #c9a054;
+  opacity: 0.7;
+}
+
+.sp-scrolling-symbol {
+  color: #c9a054;
+  font-size: 14px;
+}
+
+.sp-scrolling-message {
+  font-size: 16px;
+  color: #c9a054;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--sp-font-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .sp-scrolling-section {
+    background-attachment: scroll; /* Mobile fallback */
+    height: 450px;
+  }
+}
+
+
+.sp-ornament-symbol {
+  color: var(--sp-primary);
+  font-size: 16px;
+}
+
+/* Image Frames */
+.sp-image-frame {
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--sp-border-color);
+  background: #FFFDF8;
+  padding: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sp-image-frame:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.sp-image-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.sp-featured-image {
+  max-width: 600px;
+}
+
+.sp-final-image {
+  max-width: 750px;
+  text-align: center;
+  margin: 40px auto 0;
+}
+
+.sp-figcaption {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--sp-muted-color);
+  font-style: italic;
+  font-family: var(--sp-font-tamil);
+}
+
+/* Cards System */
+.sp-card-introduction {
+  background: var(--sp-card-bg);
+  border: 1px solid var(--sp-border-color);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  margin-top: 40px;
+}
+
+.sp-paragraph {
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+.sp-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Section Title */
+.sp-section-title {
+  font-size: 30px;
+  color: var(--sp-primary);
+  text-align: center;
+  margin: 0 0 40px;
+  position: relative;
+  font-weight: 600;
+}
+
+.sp-section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--sp-primary);
+  margin: 12px auto 0;
+  opacity: 0.6;
+}
+
+/* Grid Layout for Preparation Section */
+.sp-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.sp-prep-card {
+  background: var(--sp-card-bg);
+  border: 1px solid var(--sp-border-color);
+  border-radius: 10px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.sp-prep-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(154, 59, 52, 0.04);
+}
+
+.sp-prep-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.sp-prep-heading {
+  font-size: 19px;
+  color: var(--sp-primary);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.sp-prep-desc {
+  font-size: 16px;
+  color: var(--sp-muted-color);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Split Layout for Meditation Method */
+.sp-split-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.sp-split-left {
+  display: flex;
+  justify-content: center;
+}
+
+.sp-split-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-method-card {
+  background: var(--sp-card-bg);
+  border: 1px solid var(--sp-border-color);
+  border-radius: 10px;
+  padding: 20px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.sp-method-card:hover {
+  transform: translateX(3px);
+}
+
+.sp-method-number {
+  font-family: var(--sp-font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--sp-primary);
+  opacity: 0.3;
+  line-height: 1;
+  min-width: 40px;
+}
+
+.sp-method-text {
+  font-size: 17px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Important Guidelines Section */
+.sp-guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.sp-guidelines-card {
+  background: #FFFDF4; /* soft cream-colored info cards */
+  border: 1px solid #F1E2CD;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.sp-guidelines-card:hover {
+  transform: translateY(-1px);
+}
+
+.sp-guideline-icon {
+  font-size: 22px;
+  line-height: 1;
+  margin-top: 3px;
+}
+
+.sp-guideline-text {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.8;
+  color: var(--sp-text-color);
+}
+
+/* Benefits Section */
+.sp-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sp-benefit-card {
+  background: var(--sp-card-bg);
+  border: 1px solid var(--sp-border-color);
+  border-radius: 8px;
+  padding: 24px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.sp-benefit-card:hover {
+  transform: translateY(-2px);
+}
+
+.sp-benefit-icon {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.sp-benefit-text {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+  color: var(--sp-primary);
+}
+
+/* Closing Section */
+.sp-closing-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 120px 24px;
+  text-align: center;
+  border-top: 1px solid var(--sp-border-color);
+  color: #FFFFFF;
+}
+
+.sp-closing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(27, 18, 18, 0.72);
+  z-index: 1;
+}
+
+.sp-closing-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sp-closing-heading {
+  font-size: 32px;
+  color: #FFFFFF;
+  margin: 0 0 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.sp-closing-quote {
+  font-size: 19px;
+  line-height: 1.8;
+  margin: 0 auto 36px;
+  max-width: 650px;
+  font-family: var(--sp-font-tamil);
+  color: #F1E2CD;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.sp-closing-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sp-closing-btn {
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--sp-font-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.sp-closing-btn-primary {
+  background: #E07D10; /* Orange/amber colored accent button */
+  color: #FFFFFF;
+}
+
+.sp-closing-btn-primary:hover {
+  background: #c26a08;
+  transform: translateY(-1px);
+}
+
+.sp-closing-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.sp-closing-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .sp-section {
+    padding: 60px 24px;
+  }
+  
+  .sp-split-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .sp-split-left {
+    order: 1;
+  }
+  
+  .sp-split-right {
+    order: 2;
+  }
+  
+  .sp-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sp-hero-section,
+  .sp-closing-section {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-title {
+    font-size: 34px;
+  }
+  
+  .sp-section-title {
+    font-size: 26px;
+  }
+  
+  .sp-prep-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sp-guidelines-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-section {
+    padding: 40px 16px;
+  }
+  
+  .sp-title {
+    font-size: 28px;
+  }
+  
+  .sp-subtitle {
+    font-size: 16px;
+  }
+  
+  .sp-prep-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sp-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sp-card-introduction {
+    padding: 24px;
+  }
+}
